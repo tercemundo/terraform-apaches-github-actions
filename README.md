@@ -1,4 +1,4 @@
-# Create Apache Servers with Terraform and Configure them with Bash Scripts
+# Automate building Apache Servers with Terraform using GitHub Actions
 
 ## Project Architecture:
 
