@@ -4,6 +4,10 @@
 
 ![Project](./readme-content/tf-diagram.jpg)
 
+## Expected Outcome:
+
+![Expected Outcome](./readme-content/output.png)
+
 - Your company has recently started a project that aims to deploy a website in Apache Servers. You and your colleagues have started to work on the project. Your Teammate have developed the website and they need your help to build infrastructure for deploying the website.
 
 - The workflow steps for you is like below:
@@ -44,8 +48,6 @@
   - Create a file name "private_ip.txt" and write your private ip's to the file.
 
   - Create an output in the terminal and display your public ip's when you create your infrastructure.
-
-## Expected Outcome:
 
 ### At the end of the project, you will be covered the following topics;
 
