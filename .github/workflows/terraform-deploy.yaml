@@ -2,14 +2,19 @@ name: "Terraform Deployment"
 on:
   # Manual trigger
   workflow_dispatch:
+
   push:
+    branches: ["main, release"]
     paths:
       - "*/**"
+
   pull_request:
-    branches: [main]
+    branches: ["main, release"]
+
 defaults:
   run:
     shell: bash
+
 jobs:
   terraform:
     name: ${{matrix.runner}} - ${{ matrix.environment }}
@@ -20,28 +25,35 @@ jobs:
         include:
           - environment: prod
             runner: ubuntu-18.04
+
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: us-east-2
+
     steps:
       - uses: actions/checkout@v2
+
       - uses: hashicorp/setup-terraform@v1
         with:
           terraform_wrapper: false
+
       - name: Terraform Init
         id: init
         run: |
           rm -rf .terraform
           terraform init -upgrade=true -no-color -input=false
+
       - name: Terraform Plan
         id: plan
         run: terraform plan -input=false -no-color
+
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         id: apply
-        run: terraform apply -auto-approve -input=false 
+        run: terraform apply -auto-approve -input=false
+
       - name: Terraform destroy
         if: github.ref == 'refs/heads/destroy'
         id: destroy
-        run: terraform destroy -auto-approve -input=false 
+        run: terraform destroy -auto-approve -input=false
