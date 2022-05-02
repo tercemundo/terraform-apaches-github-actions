@@ -3,14 +3,6 @@ name: "Terraform Infrastructure Plan"
 on:
   push:
     branches:
-      - master
-      - develop
-      - release
-      - hotfix
-      - main
-      - test
-      - staging
-      - production
       - "*/**"
 
 jobs:
