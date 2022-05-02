@@ -1,3 +1,5 @@
+[![Terraform Infrastructure Plan](https://github.com/devenes/terraform-apaches-github-actions/actions/workflows/tf_plan.yml/badge.svg)](https://github.com/devenes/terraform-apaches-github-actions/actions/workflows/tf_plan.yml) [![Terraform Deployment](https://github.com/devenes/terraform-apaches-github-actions/actions/workflows/terraform-deploy.yaml/badge.svg)](https://github.com/devenes/terraform-apaches-github-actions/actions/workflows/terraform-deploy.yaml)
+
 # Automate building Apache Servers with Terraform using GitHub Actions
 
 ## Project Architecture:
