@@ -3,7 +3,7 @@ name: "Terraform Infrastructure Plan"
 on:
   push:
     branches:
-      - "*/**"
+      - "*"
 
 jobs:
   terraform:
