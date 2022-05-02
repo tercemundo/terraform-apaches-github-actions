@@ -11,7 +11,7 @@ on:
       - test
       - staging
       - production
-      - *
+      - "*/**"
 
 jobs:
   terraform:
